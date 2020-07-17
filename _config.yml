@@ -37,7 +37,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Microsoft Dynamics 365 Business Central Community.
 author: BC Docker Guide Team
 email: info@bcdocker.info
-avatar: assets/images/docker-bc.jpg
+avatar: assets/images/docker-bc.png
 
 # You'll want to customize url and baseurl for your own site:
 baseurl: "/" # the subpath of your site, e.g. /blog
