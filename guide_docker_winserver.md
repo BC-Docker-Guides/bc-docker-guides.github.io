@@ -4,6 +4,7 @@ subtitle: Docker for Windows Desktop on a Windows server
 layout: "page"
 icon: fa-server
 order: 30
+hide: true
 ---
 
 (In progress)
