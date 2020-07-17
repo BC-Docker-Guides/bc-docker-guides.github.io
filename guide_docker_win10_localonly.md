@@ -3,8 +3,7 @@ title: Docker Win10 Local
 subtitle: Docker for Windows Desktop on a Windows 10 system with local (host) access only
 layout: "page"
 icon: fa-desktop
-order: 10
-hide: true
+order: 11
 ---
 
 (In progress)

@@ -3,8 +3,7 @@ title: Docker Windows Server
 subtitle: Docker for Windows Desktop on a Windows server
 layout: "page"
 icon: fa-server
-order: 11
-hide: true
+order: 30
 ---
 
 (In progress)
