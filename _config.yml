@@ -65,4 +65,5 @@ collections: [sections]
 
 
 # custom url so we can org the Guides
-include: ['_guides']
+include:
+  - _guides
