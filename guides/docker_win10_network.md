@@ -10,3 +10,4 @@ hide: true
 (In progress)
 
 This page will be a guide to using Docker for Windows Desktop on a Windows 10 system with network access
+![Testing Image Pathing](/assets/images/pic04.jpg "Some gradient maybe?")
