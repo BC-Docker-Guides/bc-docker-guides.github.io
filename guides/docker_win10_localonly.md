@@ -7,6 +7,6 @@ order: 11
 hide: true
 ---
 
-(In progress)
+(In progress, Coming Jan 2021)
 
 This page will be a guide to using Docker for Windows Desktop on a Windows 10 system with local (host) access only
