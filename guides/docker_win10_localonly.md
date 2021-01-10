@@ -68,12 +68,15 @@ As the next step of this BC Docker Wizard, we face the option on how we will aut
 > ![](/assets/images/local10/image3.png)
 
 The choice here will vary depending on how you wish for it to be setup, where the options are the following:
+
 a.  Username/Password authentication -- Once this Wizard is done and you launch the newly created script you will be met with a Windows PowerShell credential request where you set up the administrative login for the BC Container.
 
 > ![](/assets/images/local10/image4.png)
 
 b.  Username/Password authentication (admin with predefined password -- P\@ssw0rd) - This option will create an Administrative login with the login credentials: Admin -- P\@ssw0rd
+
 c.  Username/Password Authentication (admin with random password -- xxxxxxxx) - This option will create an Administrative login with the login User **Admin**and generate a random password, where the generated password will be seen at the end of the option name (ex. The random password made in this guide was "Puri7313")
+
 d.  Windows Authentication - This option will use your pre-existing username on your machine, this will include the domain you are part of, if you are part of one.
 
 ---
@@ -81,7 +84,7 @@ d.  Windows Authentication - This option will use your pre-existing username on 
 The next step of this wizard will let you choose the name of your BC Container.
 > ![](/assets/images/local10/image5.png)
 
-We have chosen our own name "SpareBrainedIdeasAB" in this example and this name will reflect the name of the container inside Docker, as seen in the picture bellow.
+We have chosen our own name "SpareBrainedIdeasAB" in this example and this name will reflect the name of the container inside Docker, as seen in the picture below.
 > ![](/assets/images/local10/image6.png)
 
 Feel free to pick whatever name you deem fit for your use, followed by submitting it with the **ENTER** key.
@@ -92,14 +95,16 @@ At the next step of this wizard, we get the option of picking which instance of 
 > ![](/assets/images/local10/image7.png)
 
 The options given here are quite straight forward where each option will do the following:
+
 **a** & **b**. Latest Business Central Sandbox / OnPrem -- This option will move forward to the next step.
+
 **c** & **d**. Insider Business Central Sandbox for Next Major / Minor release -- Requires an Insider SAS token supplied by Microsoft to be applied at the next step to continue with this option, as seen in the picture below:
 > ![](/assets/images/local10/image8.png)
 
-**e** & **f**. Specific Business Central Sandbox/OnPrem build -- This option is for when you need a specific build and the wizard requires you to follow up with the full version number after you've picked this option, as seen if the picture bellow:
+**e** & **f**. Specific Business Central Sandbox/OnPrem build -- This option is for when you need a specific build and the wizard requires you to follow up with the full version number after you've picked this option, as seen if the picture below:
 > ![](/assets/images/local10/image9.png)
 
-**g**, **h** & **i**. Specific NAV 20xx version -- requires you to supply the CU number of the build you wish to use. ('0' is considered as "RTM" and leaving it blank will default to the latest version.) See picture bellow:
+**g**, **h** & **i**. Specific NAV 20xx version -- requires you to supply the CU number of the build you wish to use. ('0' is considered as "RTM" and leaving it blank will default to the latest version.) See picture below:
 > ![](/assets/images/local10/image10.png)
 
 For the purpose of this guide, we will pick option "**b**" for "Latest Business Central OnPrem", followed by submitting it with the **ENTER** key.
@@ -118,7 +123,7 @@ key.
 Next part will be the option to chose if we need the test toolkit to beinstalled.
 > ![](/assets/images/local10/image12.png)
 
-The Test Toolkit is primarily used for developers or consultants who will be running Testing tools against customizations, and will covered in this guide.
+The Test Toolkit is primarily used for developers or consultants who will be running Testing tools against customizations, and will not be covered in this guide.
 
 We will pick the default option "**d**" for "No Test Toolkit needed", followed by submitting it with the **ENTER** key.
 
@@ -152,11 +157,13 @@ At this step we will pick the location of the database
 > ![](/assets/images/local10/image16.png)
 
 The choice will vary depending on a few parameters:
+
 a.  This option will use the default instance and install the selected Database version(In this guide we will be using the Cronus Demo Database) on SQLEXPRESS within the container we are currently setting up.
-b.  This option is used if you already have a database backup and wish to restore it to the container we are currently setting up. (Note that this requires the version of the Database has to match the BC/NAV version provided earlier in this wizard.)  You will need to provide the full path and filename of the database backup once you've selected this option.
+
+b.  This option is used if you already have a database backup and wish to restore it to the container we are currently setting up. (Note that this requires the version of the Database has to match the BC/NAV version provided earlier in this wizard.)  You will need to provide the full path and filename of the database backup once you've selected this option:
 > ![](/assets/images/local10/image17.png)
 
-c.  This option is used for the instance where the database is already located on a separate database server, this option requires you to modify the connection string to the proper Database location as well as user authentication, see the wizard for the correct format needed (as seen in picture bellow).
+c.  This option is used for the instance where the database is already located on a separate database server, this option requires you to modify the connection string to the proper Database location as well as user authentication, see the wizard for the correct format needed:
 > ![](/assets/images/local10/image18.png)
 
 We will be installing our version of Cronus Demo Database within the given container, i.e. we will pick the default option "**a**" followed by submitting it with the **ENTER** key.
@@ -175,9 +182,10 @@ Next we will choose the option for the DNS.
 > ![](/assets/images/local10/image20.png)
 
 The option here will reflect how the docker containers resolve their DNS queries.
-a.  This option will default to the DNS configured in the Docker Daemon
-b.  This option will set the DNS to Googles Public DNS, i.e 8.8.8.8
-c.  This option will use the DNS that is in use on the HOST Machine.
+
+- a.  This option will default to the DNS configured in the Docker Daemon
+- b.  This option will set the DNS to Googles Public DNS, i.e 8.8.8.8
+- c.  This option will use the DNS that is in use on the HOST Machine.
 
 We recommend either picking option "**b**" or "**c**" where we will be able to modify the entry later before running the finished script.
 
@@ -188,9 +196,9 @@ We will pick option "**b**" for the Google Public DNS followed by submitting it 
 The next step will allow us to install (or not) a Self-Signed Certificate and therefore allow us to use HTTPS in the connection to the BC Instance.
 > ![](/assets/images/local10/image21.png)
 
-a.  The Default option, usually chosen when only using the container locally from the host computer.
-b.  This option will install a self-signed SSL Certificate on the Docker Image to validate the use of HTTPS when connecting to the container through a web browser.
-c.  This option is an extension to option **b** with the addition of installing the same certificate on the HOST, to remove the insecure connection warnings shown when connecting to container through a web browser.
+- a.  The Default option, usually chosen when only using the container locally from the host computer.
+- b.  This option will install a self-signed SSL Certificate on the Docker Image to validate the use of HTTPS when connecting to the container through a web browser.
+- c.  This option is an extension to option **b** with the addition of installing the same certificate on the HOST, to remove the insecure connection warnings shown when connecting to container through a web browser.
 
 We will pick the default option "**a**" followed by submitting it with the **ENTER** key.
 
@@ -224,7 +232,7 @@ This step has its information well provided in the Wizard for its use and while 
 
 ---
 ### 18. PowerShell Script
-Summary of the settings chosen in the wizard; picture bellow will reflect the options we have provided in this guide. Here you will also be given the option to save this script for future use and modification.
+Summary of the settings chosen in the wizard; picture below will reflect the options we have provided in this guide. Here you will also be given the option to save this script for future use and modification.
 > ![](/assets/images/local10/image25.png)
 
 To save this script, simply supply a name for the script, followed by submitting it with the **ENTER** key.
@@ -232,7 +240,9 @@ To save this script, simply supply a name for the script, followed by submitting
 ---
 ### 19. DONE
 Once you have hit **ENTER** in the Wizard, it will follow up with opening the newly created script in PowerShell ISE, where you can run and modify it at any given time.
-Once you are ready to finish this BC Container Installation, simply run the script and let it run its course.
+
+Once you are ready to finish this BC Container Installation, simply run the script and let it run its course. The runtime varies by network speeds. After you download a particular version/build/region, the artifacts are cached, so repeated runs may be much faster.
+
 When everything is done, you will be able to locate your new installation of the BC Docker Container within the program "**Docker Desktop**".  You will also find there are newly created shortcuts on the Desktop named for your image:
 - *containername* Command Prompt - This will open a command prompt _within_ the container
 - *containername* Powershell - This will open a Powershell prompt _within_ the container
